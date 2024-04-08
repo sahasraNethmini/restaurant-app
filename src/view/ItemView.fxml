@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+   <children>
+      <Label layoutX="41.0" layoutY="14.0" prefHeight="46.0" prefWidth="278.0" text="DASHBOARD ITEM" textFill="#41a4e8">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <VBox fx:id="vBoxTextFields" layoutX="38.0" layoutY="97.0" prefHeight="226.0" prefWidth="214.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtItemCode" onAction="#txtItemCodeOnAction" onKeyReleased="#itemCodeOnKeyRelesed" prefHeight="41.0" prefWidth="209.0" promptText="Item Code">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDescription" onKeyReleased="#descriptionOnKeyRelesed" prefHeight="41.0" prefWidth="210.0" promptText="Description">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUnitPrice" onKeyReleased="#unitPriceOnKeyRelesed" prefHeight="41.0" prefWidth="210.0" promptText="Unit Price">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="143.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtQTY" onKeyReleased="#qtyOnKeyRelesed" prefHeight="41.0" prefWidth="210.0" promptText="QTY On Hand">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tblItem" layoutX="273.0" layoutY="97.0" prefHeight="305.0" prefWidth="488.0">
+        <columns>
+          <TableColumn id="code" fx:id="colCode" prefWidth="87.199951171875" text="Item Code" />
+          <TableColumn id="description" fx:id="colDescription" prefWidth="117.5999755859375" text="Description" />
+            <TableColumn id="unitPrice" fx:id="colUnitPrice" prefWidth="108.80007934570312" text="Unit Price" />
+            <TableColumn id="qtyOnHand" fx:id="colQTY" prefWidth="88.79998779296875" text="QTY On Hand" />
+            <TableColumn id="btnDelete" fx:id="colDelete" prefWidth="89.5999755859375" text="Delete" />
+        </columns>
+      </TableView>
+      <Button layoutX="635.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnNewItemOnAction" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: green;" text="+ NEW ITEM" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <HBox fx:id="btnSaveUpdate" layoutX="48.0" layoutY="371.0" prefHeight="31.0" prefWidth="203.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="74.0" style="-fx-background-color: #2ecc71;" text="SAVE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="98.0" style="-fx-background-color: #2980b9;" text="UPDATE" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

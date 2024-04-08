@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <Label layoutX="42.0" layoutY="22.0" text="DASHBOARD CUSTOMER" textFill="#0f96d9">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <VBox fx:id="vBox" layoutX="10.0" layoutY="108.0" prefHeight="143.0" prefWidth="253.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCustomerID" minWidth="220.0" onAction="#txtCustomerIDOnAction" onKeyReleased="#txtIdOnKeyReleased" prefHeight="38.0" prefWidth="167.0" promptText="Customer ID">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCustomerName" minWidth="220.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="42.0" prefWidth="200.0" promptText="Customer Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="243.0" spacing="5.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="6.0" style="-fx-text-fill: red;" text="*">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtContact" minWidth="220.0" onKeyReleased="#txtContactOnKeyReleased" prefHeight="41.0" prefWidth="200.0" promptText="Contact">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="tblCustomer" layoutX="278.0" layoutY="108.0" prefHeight="262.0" prefWidth="475.0">
+        <columns>
+          <TableColumn fx:id="custID" prefWidth="99.20001220703125" text="ID" />
+          <TableColumn fx:id="custName" prefWidth="169.5999755859375" text="Name" />
+            <TableColumn fx:id="custContact" minWidth="0.0" prefWidth="129.60003662109375" text="Contact" />
+            <TableColumn id="btnDelete" fx:id="custDelete" minWidth="0.0" prefWidth="72.0001220703125" text="Delete" />
+        </columns>
+      </TableView>
+      <Button layoutX="598.0" layoutY="37.0" mnemonicParsing="false" onAction="#btnNewCustomerOnAction" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: green;" text="+ NEW CUSTOMER" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <HBox layoutX="62.0" layoutY="338.0" prefHeight="31.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="21.0" prefWidth="86.0" style="-fx-background-color: #2ecc71;" text="SAVE" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>s
+            </Button>
+            <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #2980b9;" text="UPDATE" textFill="#fcfcfc">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
